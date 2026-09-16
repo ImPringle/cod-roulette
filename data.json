@@ -3,133 +3,548 @@
     {
       "name": "Black Ops 1",
       "maps": [
-        { "map": "Kino Der Toten", "pap": true, "perks": true },
-        { "map": "'Five'", "pap": true, "perks": true },
-        { "map": "Ascension", "pap": true, "perks": true },
-        { "map": "Call of the Dead", "pap": true, "perks": true },
-        { "map": "Shangri-la", "pap": true, "perks": true },
-        { "map": "Moon", "pap": true, "perks": true },
-        { "map": "Nacht Der Untoten", "pap": false, "perks": false },
-        { "map": "Verrückt", "pap": false, "perks": true },
-        { "map": "Shi No Numa", "pap": false, "perks": true },
-        { "map": "Der Riese", "pap": true, "perks": true }
+        {
+          "map": "Kino Der Toten",
+          "pap": true,
+          "perks": true,
+          "gobblegums": false,
+          "easter_egg": false,
+          "power": true
+        },
+        {
+          "map": "'Five'",
+          "pap": true,
+          "perks": true,
+          "gobblegums": false,
+          "easter_egg": false,
+          "power": true
+        },
+        {
+          "map": "Dead Ops Arcade",
+          "pap": false,
+          "perks": true,
+          "gobblegums": false,
+          "easter_egg": false,
+          "power": false
+        },
+        {
+          "map": "Ascension",
+          "pap": true,
+          "perks": true,
+          "gobblegums": false,
+          "easter_egg": true,
+          "power": true,
+          "ee_min_players": 4
+        },
+        {
+          "map": "Call of the Dead",
+          "pap": true,
+          "perks": true,
+          "gobblegums": false,
+          "easter_egg": true,
+          "power": true,
+          "ee_min_players": 1
+        },
+        {
+          "map": "Shangri-La",
+          "pap": true,
+          "perks": true,
+          "gobblegums": false,
+          "easter_egg": true,
+          "power": true,
+          "ee_min_players": 4
+        },
+        {
+          "map": "Moon",
+          "pap": true,
+          "perks": true,
+          "gobblegums": false,
+          "easter_egg": true,
+          "power": true,
+          "ee_min_players": 1
+        },
+        {
+          "map": "Nacht Der Untoten",
+          "pap": false,
+          "perks": false,
+          "gobblegums": false,
+          "easter_egg": false,
+          "power": false
+        },
+        {
+          "map": "Verrückt",
+          "pap": false,
+          "perks": true,
+          "gobblegums": false,
+          "easter_egg": false,
+          "power": true
+        },
+        {
+          "map": "Shi No Numa",
+          "pap": false,
+          "perks": true,
+          "gobblegums": false,
+          "easter_egg": false,
+          "power": false
+        },
+        {
+          "map": "Der Riese",
+          "pap": true,
+          "perks": true,
+          "gobblegums": false,
+          "easter_egg": true,
+          "power": true,
+          "ee_min_players": 1
+        }
       ]
     },
     {
       "name": "Black Ops 2",
       "maps": [
-        { "map": "Town", "pap": true, "perks": true },
-        { "map": "Tranzit", "pap": true, "perks": true },
-        { "map": "Farm", "pap": false, "perks": true },
-        { "map": "Die Rise", "pap": true, "perks": true },
-        { "map": "Mob of the Dead", "pap": true, "perks": true },
-        { "map": "Buried", "pap": true, "perks": true },
-        { "map": "Origins", "pap": true, "perks": true },
-        { "map": "Nuketown Zombies", "pap": true, "perks": true }
+        {
+          "map": "Tranzit",
+          "pap": true,
+          "perks": true,
+          "gobblegums": false,
+          "easter_egg": true,
+          "power": true,
+          "ee_min_players": 1
+        },
+        {
+          "map": "Bus Depot",
+          "pap": false,
+          "perks": false,
+          "gobblegums": false,
+          "easter_egg": false,
+          "power": false
+        },
+        {
+          "map": "Town",
+          "pap": true,
+          "perks": true,
+          "gobblegums": false,
+          "easter_egg": false,
+          "power": false
+        },
+        {
+          "map": "Farm",
+          "pap": false,
+          "perks": true,
+          "gobblegums": false,
+          "easter_egg": false,
+          "power": false
+        },
+        {
+          "map": "Nuketown Zombies",
+          "pap": true,
+          "perks": true,
+          "gobblegums": false,
+          "easter_egg": false,
+          "power": false
+        },
+        {
+          "map": "Die Rise",
+          "pap": true,
+          "perks": true,
+          "gobblegums": false,
+          "easter_egg": true,
+          "power": true,
+          "ee_min_players": 4
+        },
+        {
+          "map": "Mob of the Dead",
+          "pap": true,
+          "perks": true,
+          "gobblegums": false,
+          "easter_egg": true,
+          "power": true,
+          "ee_min_players": 2
+        },
+        {
+          "map": "Buried",
+          "pap": true,
+          "perks": true,
+          "gobblegums": false,
+          "easter_egg": true,
+          "power": true,
+          "ee_min_players": 4
+        },
+        {
+          "map": "Origins",
+          "pap": true,
+          "perks": true,
+          "gobblegums": false,
+          "easter_egg": true,
+          "power": true,
+          "ee_min_players": 1
+        }
+      ]
+    },
+    {
+      "name": "Black Ops 3",
+      "maps": [
+        {
+          "map": "Shadows of Evil",
+          "pap": true,
+          "perks": true,
+          "gobblegums": true,
+          "easter_egg": true,
+          "power": true,
+          "ee_min_players": 4
+        },
+        {
+          "map": "The Giant",
+          "pap": true,
+          "perks": true,
+          "gobblegums": true,
+          "easter_egg": true,
+          "power": true,
+          "ee_min_players": 1
+        },
+        {
+          "map": "Der Eisendrache",
+          "pap": true,
+          "perks": true,
+          "gobblegums": true,
+          "easter_egg": true,
+          "power": true,
+          "ee_min_players": 1
+        },
+        {
+          "map": "Zetsubou No Shima",
+          "pap": true,
+          "perks": true,
+          "gobblegums": true,
+          "easter_egg": true,
+          "power": true,
+          "ee_min_players": 1
+        },
+        {
+          "map": "Gorod Krovi",
+          "pap": true,
+          "perks": true,
+          "gobblegums": true,
+          "easter_egg": true,
+          "power": true,
+          "ee_min_players": 1
+        },
+        {
+          "map": "Revelations",
+          "pap": true,
+          "perks": true,
+          "gobblegums": true,
+          "easter_egg": true,
+          "power": true,
+          "ee_min_players": 1
+        },
+        {
+          "map": "Dead Ops Arcade 2: Cyber's Avengening",
+          "pap": false,
+          "perks": true,
+          "gobblegums": false,
+          "easter_egg": false,
+          "power": false
+        },
+        {
+          "map": "Nacht Der Untoten (Chronicles)",
+          "pap": false,
+          "perks": false,
+          "gobblegums": true,
+          "easter_egg": false,
+          "power": false
+        },
+        {
+          "map": "Verrückt (Chronicles)",
+          "pap": false,
+          "perks": true,
+          "gobblegums": true,
+          "easter_egg": false,
+          "power": true
+        },
+        {
+          "map": "Shi No Numa (Chronicles)",
+          "pap": false,
+          "perks": true,
+          "gobblegums": true,
+          "easter_egg": false,
+          "power": false
+        },
+        {
+          "map": "Kino Der Toten (Chronicles)",
+          "pap": true,
+          "perks": true,
+          "gobblegums": true,
+          "easter_egg": false,
+          "power": true
+        },
+        {
+          "map": "Ascension (Chronicles)",
+          "pap": true,
+          "perks": true,
+          "gobblegums": true,
+          "easter_egg": true,
+          "power": true,
+          "ee_min_players": 4
+        },
+        {
+          "map": "Shangri-La (Chronicles)",
+          "pap": true,
+          "perks": true,
+          "gobblegums": true,
+          "easter_egg": true,
+          "power": true,
+          "ee_min_players": 4
+        },
+        {
+          "map": "Moon (Chronicles)",
+          "pap": true,
+          "perks": true,
+          "gobblegums": true,
+          "easter_egg": true,
+          "power": true,
+          "ee_min_players": 1
+        },
+        {
+          "map": "Origins (Chronicles)",
+          "pap": true,
+          "perks": true,
+          "gobblegums": true,
+          "easter_egg": true,
+          "power": true,
+          "ee_min_players": 1
+        }
       ]
     }
   ],
   "challenges": [
     {
+      "challenge": "Main Easter Egg",
+      "require-pap": false,
+      "require-perks": false,
+      "require-gobblegums": false,
+      "require-easter-egg": true,
+      "difficulty": "Hardcore",
+      "category": "Objective",
+      "rules": "Complete the map's main story Easter Egg quest to finish the challenge"
+    },
+    {
+      "challenge": "Main Easter Egg Speedrun",
+      "require-pap": true,
+      "require-perks": true,
+      "require-gobblegums": false,
+      "require-easter-egg": true,
+      "difficulty": "Hardcore",
+      "category": "Objective",
+      "rules": "Complete the map's main story Easter Egg as fast as possible"
+    },
+    {
       "challenge": "No doors",
       "require-pap": false,
       "require-perks": false,
+      "require-gobblegums": false,
+      "require-easter-egg": false,
+      "difficulty": "Hard",
+      "category": "Map Restriction",
       "rules": "Do not open any doors"
     },
     {
       "challenge": "No Perks",
       "require-pap": false,
       "require-perks": false,
-      "rules": "Do not use any perks"
+      "require-gobblegums": false,
+      "require-easter-egg": false,
+      "difficulty": "Medium",
+      "category": "Loadout",
+      "rules": "Do not buy or use any perks"
     },
     {
       "challenge": "No Power",
       "require-pap": false,
       "require-perks": false,
-      "rules": "Do not turn the power on"
+      "require-gobblegums": false,
+      "require-easter-egg": false,
+      "difficulty": "Hard",
+      "category": "Map Restriction",
+      "rules": "Do not turn on the main power switch"
+    },
+    {
+      "challenge": "Classic Gobblegums Only",
+      "require-pap": false,
+      "require-perks": false,
+      "require-gobblegums": true,
+      "require-easter-egg": false,
+      "difficulty": "Medium",
+      "category": "BO3 Specific",
+      "rules": "You may only use non-mega (infinite classic) Gobblegums"
+    },
+    {
+      "challenge": "No Gobblegums",
+      "require-pap": false,
+      "require-perks": false,
+      "require-gobblegums": true,
+      "require-easter-egg": false,
+      "difficulty": "Medium",
+      "category": "BO3 Specific",
+      "rules": "Do not hit the Gobblegum machine at all"
+    },
+    {
+      "challenge": "First Weapon Only",
+      "require-pap": false,
+      "require-perks": false,
+      "require-gobblegums": false,
+      "require-easter-egg": false,
+      "difficulty": "Medium",
+      "category": "Loadout",
+      "rules": "Your starting pistol or first wall/box buy is your only weapon for the rest of the game"
+    },
+    {
+      "challenge": "No HUD / No Crosshairs",
+      "require-pap": false,
+      "require-perks": false,
+      "require-gobblegums": false,
+      "require-easter-egg": false,
+      "difficulty": "Easy",
+      "category": "Settings",
+      "rules": "Disable the in-game HUD in options or aim down sights constantly"
     },
     {
       "challenge": "Wall Weapons Only",
       "require-pap": false,
       "require-perks": false,
-      "rules": "Only use wall weapons"
+      "require-gobblegums": false,
+      "require-easter-egg": false,
+      "difficulty": "Easy",
+      "category": "Loadout",
+      "rules": "Only buy and use weapons off the wall"
     },
     {
       "challenge": "Round 33",
       "require-pap": false,
       "require-perks": false,
+      "require-gobblegums": false,
+      "require-easter-egg": false,
+      "difficulty": "Medium",
+      "category": "Objective",
       "rules": "Survive until round 33"
     },
     {
       "challenge": "Hardcore Box Challenge",
       "require-pap": false,
       "require-perks": false,
-      "rules": "Get a new weapon from the box every round, you have to use it to survive the whole round (if you run out of ammo you can buy the closest wall weapon), but you can only survive in the room that the box is located."
+      "require-gobblegums": false,
+      "require-easter-egg": false,
+      "difficulty": "Hard",
+      "category": "Mystery Box",
+      "rules": "Get a new weapon from the box every round and use it exclusively while staying inside the current Mystery Box room"
     },
     {
       "challenge": "Box Challenge",
       "require-pap": false,
       "require-perks": false,
-      "rules": "Get a new weapon from the box every round, and you have to use it to survive the whole round (if you run out of ammo you can buy the closest wall weapon)"
+      "require-gobblegums": false,
+      "require-easter-egg": false,
+      "difficulty": "Medium",
+      "category": "Mystery Box",
+      "rules": "Get a new weapon from the box every round and use it to survive the full round"
     },
     {
       "challenge": "One Box Challenge",
       "require-pap": false,
       "require-perks": false,
-      "rules": "Hit the box once, and you have to use the weapon the whole game... you can pack a punch don't worry."
+      "require-gobblegums": false,
+      "require-easter-egg": false,
+      "difficulty": "Medium",
+      "category": "Mystery Box",
+      "rules": "Hit the box once; that weapon is your primary for the entire match (Pack-a-Punch allowed)"
     },
     {
       "challenge": "Two Box Challenge",
       "require-pap": false,
       "require-perks": false,
-      "rules": "Hit the box twice, and you have to use the weapons the whole game... you can pack a punch don't worry."
+      "require-gobblegums": false,
+      "require-easter-egg": false,
+      "difficulty": "Easy",
+      "category": "Mystery Box",
+      "rules": "Hit the box twice; those two weapons are your loadout for the entire match (Pack-a-Punch allowed)"
     },
     {
       "challenge": "1-1-1",
       "require-pap": true,
       "require-perks": true,
-      "rules": "Easy... 1 perk, 1 box, 1 pack a punch :)"
+      "require-gobblegums": false,
+      "require-easter-egg": false,
+      "difficulty": "Medium",
+      "category": "Loadout",
+      "rules": "Limit yourself to exactly 1 perk, 1 box hit, and 1 Pack-a-Punch upgrade"
     },
     {
       "challenge": "Rainbow Perks",
       "require-pap": false,
       "require-perks": true,
-      "rules": "You have to buy all the perks in rainbow order"
+      "require-gobblegums": false,
+      "require-easter-egg": false,
+      "difficulty": "Hard",
+      "category": "Perk Order",
+      "rules": "Buy perks strictly in spectrum order based on machine color (Red, Orange, Yellow, Green, Cyan, Blue, Purple)"
     },
     {
       "challenge": "Reverse Rainbow Perks",
       "require-pap": false,
       "require-perks": true,
-      "rules": "You have to buy all the perks in reverserainbow order (jugg at the end lol)"
+      "require-gobblegums": false,
+      "require-easter-egg": false,
+      "difficulty": "Hard",
+      "category": "Perk Order",
+      "rules": "Buy perks strictly in reverse spectrum order (Purple down to Red, saving Juggernog for last)"
     },
     {
       "challenge": "Sniper Only",
       "require-pap": false,
       "require-perks": false,
+      "require-gobblegums": false,
+      "require-easter-egg": false,
+      "difficulty": "Hard",
+      "category": "Weapon Class",
       "rules": "Only use sniper rifles"
     },
     {
       "challenge": "Shotgun Only",
       "require-pap": false,
       "require-perks": false,
+      "require-gobblegums": false,
+      "require-easter-egg": false,
+      "difficulty": "Easy",
+      "category": "Weapon Class",
       "rules": "Only use shotguns"
     },
     {
       "challenge": "Pistol Only",
       "require-pap": false,
       "require-perks": false,
-      "rules": "Only use pistols"
+      "require-gobblegums": false,
+      "require-easter-egg": false,
+      "difficulty": "Hard",
+      "category": "Weapon Class",
+      "rules": "Only use handguns (Starting pistol, Box/Wall pistols, and Ray Guns)"
     },
     {
       "challenge": "SMG Only",
       "require-pap": false,
       "require-perks": false,
+      "require-gobblegums": false,
+      "require-easter-egg": false,
+      "difficulty": "Easy",
+      "category": "Weapon Class",
       "rules": "Only use submachine guns"
     },
     {
       "challenge": "LMG Only",
       "require-pap": false,
       "require-perks": false,
+      "require-gobblegums": false,
+      "require-easter-egg": false,
+      "difficulty": "Easy",
+      "category": "Weapon Class",
       "rules": "Only use light machine guns"
     }
   ]

@@ -77,7 +77,7 @@ function mapKey(gameName, mapName) {
 }
 
 function defaultEnabled() {
-  const next = { games: {}, maps: {}, challenges: {} };
+  const next = { games: {}, maps: {}, challenges: {}, players: 4 };
   data.game.forEach((game) => {
     next.games[game.name] = true;
     game.maps.forEach((map) => {
@@ -90,6 +90,12 @@ function defaultEnabled() {
   return next;
 }
 
+function normalizePlayers(value) {
+  const count = Number(value);
+  if (count >= 1 && count <= 4) return count;
+  return 4;
+}
+
 function loadEnabled() {
   const defaults = defaultEnabled();
   try {
@@ -99,6 +105,7 @@ function loadEnabled() {
       games: { ...defaults.games, ...saved.games },
       maps: { ...defaults.maps, ...saved.maps },
       challenges: { ...defaults.challenges, ...saved.challenges },
+      players: normalizePlayers(saved.players ?? defaults.players),
     };
   } catch {
     return defaults;
@@ -109,9 +116,19 @@ function saveEnabled() {
   localStorage.setItem(SETTINGS_KEY, JSON.stringify(enabled));
 }
 
+function playerCount() {
+  return enabled && enabled.players ? enabled.players : 4;
+}
+
 function challengeFitsMap(challenge, map) {
   if (challenge["require-pap"] && !map.pap) return false;
   if (challenge["require-perks"] && !map.perks) return false;
+  if (challenge["require-gobblegums"] && !map.gobblegums) return false;
+  if (challenge["require-easter-egg"] && !map.easter_egg) return false;
+  if (challenge["require-easter-egg"]) {
+    const minPlayers = Number(map.ee_min_players) || 1;
+    if (playerCount() < minPlayers) return false;
+  }
   return true;
 }
 
@@ -416,7 +433,30 @@ function renderSettings() {
     )
     .join("");
 
+  const playersHtml = [1, 2, 3, 4]
+    .map(
+      (count) => `
+        <label class="settings-player">
+          <input
+            type="radio"
+            name="players"
+            data-kind="players"
+            value="${count}"
+            ${playerCount() === count ? "checked" : ""}
+          />
+          <span>${count}</span>
+        </label>
+      `,
+    )
+    .join("");
+
   body.innerHTML = `
+    <section class="settings-section">
+      <h3 class="settings-kicker">Players</h3>
+      <div class="settings-players" role="radiogroup" aria-label="Number of players">
+        ${playersHtml}
+      </div>
+    </section>
     <section class="settings-section">
       <h3 class="settings-kicker">Games & maps</h3>
       ${gamesHtml}
@@ -429,8 +469,16 @@ function renderSettings() {
 }
 
 function onSettingsChange(event) {
-  const input = event.target.closest("input[type=checkbox]");
+  const input = event.target.closest("input");
   if (!input) return;
+
+  if (input.dataset.kind === "players") {
+    enabled.players = normalizePlayers(input.value);
+    applySettings();
+    return;
+  }
+
+  if (input.type !== "checkbox") return;
 
   const kind = input.dataset.kind;
   const name = input.dataset.name;
