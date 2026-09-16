@@ -4,6 +4,7 @@
   --muted: #71717a;
   --item-h: 96px;
   --window-h: calc(var(--item-h) * 3);
+  --reel-axis: y;
 }
 
 *,
@@ -25,6 +26,8 @@ html {
     #000000 100%
   );
   -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -501,5 +504,272 @@ body.settings-open .settings-toggle {
 
   .settings-panel {
     width: min(800px, 100%);
+  }
+}
+
+@media (max-width: 1250px), (max-width: 1400px) and (any-pointer: coarse) {
+  :root {
+    --item-h: 80px;
+  }
+
+  .ui {
+    width: 100%;
+    height: 100%;
+    min-height: 100dvh;
+    padding: 24px 16px 80px;
+    padding-top: max(24px, env(safe-area-inset-top));
+    padding-bottom: max(80px, calc(env(safe-area-inset-bottom) + 56px));
+    zoom: 1;
+  }
+
+  .machine-block {
+    padding-bottom: 6.5rem;
+  }
+
+  .machine {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 24px;
+    max-width: 100%;
+  }
+
+  .reel {
+    width: min(240px, 26vw);
+  }
+
+  .item {
+    font-size: 17px;
+    overflow-wrap: anywhere;
+  }
+
+  .hint {
+    position: fixed;
+    bottom: max(16px, env(safe-area-inset-bottom));
+    width: min(560px, 92vw);
+    z-index: 2;
+    font-size: 14px;
+    pointer-events: none;
+  }
+
+  .rules {
+    width: min(560px, 92vw);
+    font-size: 15px;
+  }
+
+  .settings-toggle {
+    top: max(8px, env(safe-area-inset-top));
+    left: max(8px, env(safe-area-inset-left));
+    width: 48px;
+    height: 48px;
+    zoom: 1;
+  }
+
+  .settings-toggle svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .settings-panel {
+    width: min(400px, 100%);
+    padding: 20px 12px 24px 20px;
+    padding-top: max(20px, env(safe-area-inset-top));
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-bottom: max(24px, env(safe-area-inset-bottom));
+  }
+
+  .settings-header {
+    margin-bottom: 18px;
+    padding-right: 8px;
+  }
+
+  .settings-header h2 {
+    font-size: 12px;
+  }
+
+  .settings-close {
+    width: 48px;
+    height: 48px;
+    font-size: 32px;
+  }
+
+  .settings-body {
+    padding-right: 12px;
+  }
+
+  .settings-section {
+    margin-bottom: 22px;
+  }
+
+  .settings-kicker {
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+
+  .settings-group {
+    margin-bottom: 10px;
+  }
+
+  .settings-fold {
+    width: 48px;
+    height: 48px;
+  }
+
+  .settings-fold svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .settings-maps {
+    margin-left: 24px;
+  }
+
+  .settings-row {
+    gap: 12px;
+    padding: 12px 0;
+    font-size: 16px;
+  }
+
+  .settings-maps .settings-row {
+    font-size: 15px;
+  }
+
+  .settings-row input {
+    width: 22px;
+    height: 22px;
+    border-radius: 4px;
+  }
+
+  .settings-row input:checked {
+    box-shadow: inset 0 0 0 2px #0e0e10;
+  }
+}
+
+@media (max-width: 700px) {
+  :root {
+    --item-h: 58px;
+    --reel-axis: x;
+  }
+
+  .stage {
+    overflow: hidden auto;
+  }
+
+  .ui {
+    padding: 16px 16px 72px;
+    padding-top: max(16px, env(safe-area-inset-top));
+    padding-bottom: max(72px, calc(env(safe-area-inset-bottom) + 48px));
+  }
+
+  .machine-block {
+    width: min(340px, 100%);
+    padding-bottom: 6rem;
+  }
+
+  .machine {
+    flex-direction: column;
+    width: 100%;
+    gap: 18px;
+  }
+
+  .reel-col {
+    flex: 0 0 auto;
+    width: 100%;
+    min-width: 0;
+    gap: 8px;
+  }
+
+  .reel {
+    width: 100%;
+    container-type: inline-size;
+  }
+
+  .reel-window {
+    height: var(--item-h);
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #000 18%,
+      #000 82%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #000 18%,
+      #000 82%,
+      transparent 100%
+    );
+  }
+
+  .strip {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .label {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+  }
+
+  .item {
+    flex: 0 0 calc(100cqw / 3);
+    width: calc(100cqw / 3);
+    height: var(--item-h);
+    padding: 0 8px;
+    font-size: 15px;
+  }
+
+  .rules {
+    width: min(340px, 92vw);
+    margin-top: 14px;
+    font-size: 13px;
+  }
+
+  .hint {
+    font-size: 13px;
+  }
+
+  .settings-panel {
+    width: 100%;
+  }
+}
+
+@media (max-width: 960px) and (max-height: 500px) {
+  :root {
+    --item-h: 48px;
+  }
+
+  .ui {
+    padding: 10px 12px 52px;
+    padding-top: max(10px, env(safe-area-inset-top));
+    padding-bottom: max(52px, calc(env(safe-area-inset-bottom) + 36px));
+  }
+
+  .machine-block {
+    padding-bottom: 4.5rem;
+  }
+
+  .machine {
+    width: auto;
+    gap: 16px;
+  }
+
+  .reel-col {
+    flex: 0 1 auto;
+    gap: 8px;
+  }
+
+  .reel {
+    width: min(180px, 28vw);
+  }
+
+  .item {
+    font-size: 13px;
+  }
+
+  .label {
+    font-size: 10px;
   }
 }

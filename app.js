@@ -21,6 +21,34 @@ function itemHeight() {
   );
 }
 
+function reelAxis() {
+  return (
+    getComputedStyle(document.documentElement)
+      .getPropertyValue("--reel-axis")
+      .trim() || "y"
+  );
+}
+
+function itemSize() {
+  if (reelAxis() === "x") {
+    const item = document.querySelector(".reel .item");
+    if (item) {
+      const width = item.getBoundingClientRect().width;
+      if (width) return width;
+    }
+    const reel = document.querySelector(".reel");
+    if (reel) return reel.getBoundingClientRect().width / 3;
+  }
+  return itemHeight();
+}
+
+function stripTransform(index) {
+  const offset = -((index - 1) * itemSize());
+  return reelAxis() === "x"
+    ? `translateX(${offset}px)`
+    : `translateY(${offset}px)`;
+}
+
 function escapeHtml(text) {
   return String(text)
     .replaceAll("&", "&amp;")
@@ -136,10 +164,6 @@ function buildStrip(options) {
   return items;
 }
 
-function offsetFor(index) {
-  return -((index - 1) * itemHeight());
-}
-
 function idleIndex(options, optionIndex) {
   return options.length + optionIndex;
 }
@@ -158,7 +182,7 @@ function setReelOptions(category, options, selectedName = options[0]) {
     )
     .join("");
   strip.style.transition = "none";
-  strip.style.transform = `translateY(${offsetFor(start)}px)`;
+  strip.style.transform = stripTransform(start);
 
   reels[category] = {
     el: reelEl,
@@ -202,7 +226,7 @@ function spinReel(category, options, result) {
   return new Promise((resolve) => {
     requestAnimationFrame(() => {
       reel.strip.style.transition = `transform ${duration}ms cubic-bezier(0.12, 0.7, 0.16, 1)`;
-      reel.strip.style.transform = `translateY(${offsetFor(target)}px)`;
+      reel.strip.style.transform = stripTransform(target);
       reel.currentIndex = target;
 
       window.setTimeout(() => {
@@ -222,7 +246,7 @@ function settleReel(category, index) {
 
   window.setTimeout(() => {
     reel.strip.style.transition = "none";
-    reel.strip.style.transform = `translateY(${offsetFor(reset)}px)`;
+    reel.strip.style.transform = stripTransform(reset);
     reel.currentIndex = reset;
     markSelected(category, reset);
   }, 40);
@@ -623,7 +647,28 @@ async function init() {
   });
 }
 
+let lastLayoutKey = "";
+
+function layoutKey() {
+  return `${reelAxis()}:${itemSize()}`;
+}
+
+function relayoutReels() {
+  if (spinning) return;
+  const key = layoutKey();
+  if (!itemSize() || key === lastLayoutKey) return;
+  lastLayoutKey = key;
+  Object.keys(reels).forEach((category) => {
+    const reel = reels[category];
+    if (!reel) return;
+    reel.strip.style.transition = "none";
+    reel.strip.style.transform = stripTransform(reel.currentIndex);
+  });
+}
+
 init();
+window.addEventListener("resize", relayoutReels);
+window.addEventListener("orientationchange", relayoutReels);
 
 window.addEventListener("keydown", (event) => {
   if (event.code === "Escape" && settingsOpen) {
