@@ -1,0 +1,136 @@
+{
+  "game": [
+    {
+      "name": "Black Ops 1",
+      "maps": [
+        { "map": "Kino Der Toten", "pap": true, "perks": true },
+        { "map": "'Five'", "pap": true, "perks": true },
+        { "map": "Ascension", "pap": true, "perks": true },
+        { "map": "Call of the Dead", "pap": true, "perks": true },
+        { "map": "Shangri-la", "pap": true, "perks": true },
+        { "map": "Moon", "pap": true, "perks": true },
+        { "map": "Nacht Der Untoten", "pap": false, "perks": false },
+        { "map": "Verrückt", "pap": false, "perks": true },
+        { "map": "Shi No Numa", "pap": false, "perks": true },
+        { "map": "Der Riese", "pap": true, "perks": true }
+      ]
+    },
+    {
+      "name": "Black Ops 2",
+      "maps": [
+        { "map": "Town", "pap": true, "perks": true },
+        { "map": "Tranzit", "pap": true, "perks": true },
+        { "map": "Farm", "pap": false, "perks": true },
+        { "map": "Die Rise", "pap": true, "perks": true },
+        { "map": "Mob of the Dead", "pap": true, "perks": true },
+        { "map": "Buried", "pap": true, "perks": true },
+        { "map": "Origins", "pap": true, "perks": true },
+        { "map": "Nuketown Zombies", "pap": true, "perks": true }
+      ]
+    }
+  ],
+  "challenges": [
+    {
+      "challenge": "No doors",
+      "require-pap": false,
+      "require-perks": false,
+      "rules": "Do not open any doors"
+    },
+    {
+      "challenge": "No Perks",
+      "require-pap": false,
+      "require-perks": false,
+      "rules": "Do not use any perks"
+    },
+    {
+      "challenge": "No Power",
+      "require-pap": false,
+      "require-perks": false,
+      "rules": "Do not turn the power on"
+    },
+    {
+      "challenge": "Wall Weapons Only",
+      "require-pap": false,
+      "require-perks": false,
+      "rules": "Only use wall weapons"
+    },
+    {
+      "challenge": "Round 33",
+      "require-pap": false,
+      "require-perks": false,
+      "rules": "Survive until round 33"
+    },
+    {
+      "challenge": "Hardcore Box Challenge",
+      "require-pap": false,
+      "require-perks": false,
+      "rules": "Get a new weapon from the box every round, you have to use it to survive the whole round (if you run out of ammo you can buy the closest wall weapon), but you can only survive in the room that the box is located."
+    },
+    {
+      "challenge": "Box Challenge",
+      "require-pap": false,
+      "require-perks": false,
+      "rules": "Get a new weapon from the box every round, and you have to use it to survive the whole round (if you run out of ammo you can buy the closest wall weapon)"
+    },
+    {
+      "challenge": "One Box Challenge",
+      "require-pap": false,
+      "require-perks": false,
+      "rules": "Hit the box once, and you have to use the weapon the whole game... you can pack a punch don't worry."
+    },
+    {
+      "challenge": "Two Box Challenge",
+      "require-pap": false,
+      "require-perks": false,
+      "rules": "Hit the box twice, and you have to use the weapons the whole game... you can pack a punch don't worry."
+    },
+    {
+      "challenge": "1-1-1",
+      "require-pap": true,
+      "require-perks": true,
+      "rules": "Easy... 1 perk, 1 box, 1 pack a punch :)"
+    },
+    {
+      "challenge": "Rainbow Perks",
+      "require-pap": false,
+      "require-perks": true,
+      "rules": "You have to buy all the perks in rainbow order"
+    },
+    {
+      "challenge": "Reverse Rainbow Perks",
+      "require-pap": false,
+      "require-perks": true,
+      "rules": "You have to buy all the perks in reverserainbow order (jugg at the end lol)"
+    },
+    {
+      "challenge": "Sniper Only",
+      "require-pap": false,
+      "require-perks": false,
+      "rules": "Only use sniper rifles"
+    },
+    {
+      "challenge": "Shotgun Only",
+      "require-pap": false,
+      "require-perks": false,
+      "rules": "Only use shotguns"
+    },
+    {
+      "challenge": "Pistol Only",
+      "require-pap": false,
+      "require-perks": false,
+      "rules": "Only use pistols"
+    },
+    {
+      "challenge": "SMG Only",
+      "require-pap": false,
+      "require-perks": false,
+      "rules": "Only use submachine guns"
+    },
+    {
+      "challenge": "LMG Only",
+      "require-pap": false,
+      "require-perks": false,
+      "rules": "Only use light machine guns"
+    }
+  ]
+}

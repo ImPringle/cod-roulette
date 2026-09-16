@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <title>COD Roulette</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=scale2" />
+  </head>
+  <body>
+    <div class="fluid" id="fluid" aria-hidden="true"></div>
+    <button
+      class="settings-toggle"
+      id="settings-toggle"
+      type="button"
+      aria-label="Settings"
+      aria-expanded="false"
+      aria-controls="settings-overlay"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          fill="currentColor"
+          d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.06-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.6-.22l-2.39.96a7.04 7.04 0 0 0-1.63-.94l-.36-2.54A.5.5 0 0 0 13.9 2h-3.8a.5.5 0 0 0-.49.42l-.36 2.54c-.59.22-1.14.54-1.63.94l-2.39-.96a.5.5 0 0 0-.6.22L2.71 8.84a.5.5 0 0 0 .12.64l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94L2.83 14.52a.5.5 0 0 0-.12.64l1.92 3.32c.14.24.43.34.6.22l2.39-.96c.5.4 1.04.72 1.63.94l.36 2.54c.05.24.26.42.49.42h3.8c.23 0 .44-.18.49-.42l.36-2.54c.59-.22 1.14-.54 1.63-.94l2.39.96c.17.12.46.02.6-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58zM12 15.6A3.6 3.6 0 1 1 12 8.4a3.6 3.6 0 0 1 0 7.2z"
+        />
+      </svg>
+    </button>
+
+    <div class="settings-overlay" id="settings-overlay" aria-hidden="true">
+      <aside class="settings-panel" role="dialog" aria-labelledby="settings-title">
+        <header class="settings-header">
+          <h2 id="settings-title">Settings</h2>
+          <button class="settings-close" id="settings-close" type="button" aria-label="Close settings">
+            ×
+          </button>
+        </header>
+        <div class="settings-body" id="settings-body"></div>
+      </aside>
+    </div>
+
+    <main class="stage">
+      <div class="ui">
+        <div class="machine-block">
+          <div class="machine" id="machine">
+          <div class="reel-col">
+            <p class="label">Game</p>
+            <div class="reel" data-category="game">
+              <div class="reel-window">
+                <div class="strip"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reel-col">
+            <p class="label">Map</p>
+            <div class="reel" data-category="map">
+              <div class="reel-window">
+                <div class="strip"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reel-col">
+            <p class="label">Challenge</p>
+            <div class="reel" data-category="challenge">
+              <div class="reel-window">
+                <div class="strip"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+          <p class="rules" id="rules"></p>
+        </div>
+
+        <p class="hint" id="hint">Tap or press space to spin</p>
+      </div>
+    </main>
+
+    <script src="app.js?v=scale2"></script>
+  </body>
+</html>
