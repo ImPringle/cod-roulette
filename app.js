@@ -1,9 +1,10 @@
 const REPEATS = 40;
 const SPIN_DURATION = {
   game: 1800,
-  map: 2000,
-  challenge: 2200,
+  map: 2200,
+  challenge: 2600,
 };
+const SPIN_STAGGER = 220;
 const SETTINGS_KEY = "cod-roulette-enabled";
 
 let data = null;
@@ -261,10 +262,6 @@ function blinkColumn(category) {
   col.classList.add("locked", "hit");
 }
 
-function blinkAll() {
-  ["game", "map", "challenge"].forEach(blinkColumn);
-}
-
 function clearBlinks() {
   document.querySelectorAll(".reel-col").forEach((col) => {
     col.classList.remove("hit", "locked");
@@ -491,6 +488,12 @@ function closeSettings() {
   document.getElementById("settings-toggle").focus();
 }
 
+function delay(ms) {
+  return new Promise((resolve) => {
+    window.setTimeout(resolve, ms);
+  });
+}
+
 async function spin() {
   if (spinning || !data || settingsOpen) return;
   const games = playableGames();
@@ -506,30 +509,35 @@ async function spin() {
   document.getElementById("hint").textContent = "Spinning…";
 
   const game = pick(games);
-  await spinReel(
+  const maps = playableMaps(game);
+  const map = pick(maps);
+  const challenges = validChallenges(map);
+  const challenge = pick(challenges);
+
+  const gameSpin = spinReel(
     "game",
     games.map((entry) => entry.name),
     game.name,
   );
-  blinkColumn("game");
-
-  const maps = playableMaps(game);
-  const map = pick(maps);
-  await spinReel(
+  await delay(SPIN_STAGGER);
+  const mapSpin = spinReel(
     "map",
     maps.map((entry) => entry.map),
     map.map,
   );
-  blinkColumn("map");
-
-  const challenges = validChallenges(map);
-  const challenge = pick(challenges);
-  await spinReel(
+  await delay(SPIN_STAGGER);
+  const challengeSpin = spinReel(
     "challenge",
     challenges.map((entry) => entry.challenge),
     challenge.challenge,
   );
-  blinkAll();
+
+  await gameSpin;
+  blinkColumn("game");
+  await mapSpin;
+  blinkColumn("map");
+  await challengeSpin;
+  blinkColumn("challenge");
 
   currentPick = { game, map, challenge };
   hasSpun = true;
